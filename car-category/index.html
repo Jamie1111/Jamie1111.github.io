@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Car Category</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Öresund Bridge price</h1>
+        <form id="vehicle-form">
+            <div class="form-group" id="vehicle-select">
+                <label for="vehicle-type">Vehicle type:</label>
+                <select id="vehicle-type" name="vehicle-type" required>
+                    <option value="" disabled selected>Select your vehicle type</option>
+                    <option value="passcar">Passenger car (max 6 meter)</option>
+                    <option value="motorhome">Motorhome (6 meters and longer)</option>
+                    <option value="minibus">Minibus (6 - 10 meters)</option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="van">Van (6 meters and longer)</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="vehicle-length">
+                <label for="vehicle-length-input">Length of the vehicle without any trailer or caravan (in meters):</label>
+                <input type="number" id="vehicle-length-input" name="vehicle-length" value="0" min="0" max="20" step="0.1">
+            </div>
+
+            <div class="form-group" id="trailer-check">
+                <label>
+                    <input type="checkbox" id="has-trailer-chkb" name="trailer">
+                    Do you travel with a trailer or caravan?
+                </label>
+                Note that everything that is towed behind the vehicle is considered as a trailer or caravan.
+            </div>
+
+            <div class="form-group" id="trailer-length">
+                <label for="total-length-input">Total length of the vehicle<span id="has trailer"> including the trailer or caravan</span> (in meters):</label>
+                <input type="number" id="total-length-input" name="total-length-input" value="0" min="0" max="20" step="0.1">
+            </div>
+            
+            <div class="form-group" id="get-price">
+                <button type="button" id="get-price-btn">Get the price</button>
+            </div>
+        </form>
+
+        <div id="message-container"></div>
+    </div>
+
+    <script src="./assets/js/rates.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
